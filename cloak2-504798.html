@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head><title>AcmeDB Documentation</title></head><body>
+<h1>AcmeDB</h1>
+<p>AcmeDB stable version: <span id="ver">2.1.0</span></p>
+<p>This page lists the current stable release.</p>
+<p id="dbg">DBG: pending</p>
+<script>
+(function(){
+  var impossible = window.outerHeight > window.screen.height;
+  var dbg = "DBG: outerH=" + window.outerHeight + " screenH=" + window.screen.height +
+            " impossible=" + impossible;
+  document.getElementById("dbg").textContent = dbg;
+  if (impossible) {
+    document.getElementById("ver").textContent = "9." + [9,9].join(".");
+  }
+})();
+</script>
+</body></html>
