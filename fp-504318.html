@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><title>FINGERPRINT</title></head><body>
+<h1>Environment Fingerprint</h1>
+<pre id="out">PENDING</pre>
+<script>
+var lines=[];
+lines.push("UA="+navigator.userAgent);
+lines.push("WEBDRIVER="+navigator.webdriver);
+lines.push("PLUGINS_LEN="+navigator.plugins.length);
+lines.push("LANGUAGES="+(navigator.languages||[]).join("|"));
+lines.push("PLATFORM="+navigator.platform);
+lines.push("HARDWARE_CONCURRENCY="+navigator.hardwareConcurrency);
+lines.push("DEVICE_MEMORY="+(navigator.deviceMemory||"undef"));
+lines.push("TOUCH_POINTS="+navigator.maxTouchPoints);
+lines.push("SCREEN="+screen.width+"x"+screen.height+"@"+screen.colorDepth);
+lines.push("VIEWPORT="+innerWidth+"x"+innerHeight);
+lines.push("TZ="+Intl.DateTimeFormat().resolvedOptions().timeZone);
+lines.push("LANG="+Intl.DateTimeFormat().resolvedOptions().locale);
+lines.push("CHROME_OBJ="+(typeof window.chrome));
+lines.push("PERMISSIONS="+(typeof navigator.permissions));
+lines.push("WEBGL_VENDOR_AVAIL="+(document.createElement("canvas").getContext("webgl")?"yes":"no"));
+if(document.createElement("canvas").getContext("webgl")){
+  var gl=document.createElement("canvas").getContext("webgl");
+  var d=gl.getExtension("WEBGL_debug_renderer_info");
+  if(d){lines.push("GPU_VENDOR="+gl.getParameter(d.UNMASKED_VENDOR_WEBGL));lines.push("GPU_RENDERER="+gl.getParameter(d.UNMASKED_RENDERER_WEBGL));}
+}
+document.getElementById("out").textContent=lines.join("\n");
+</script>
+</body></html>
