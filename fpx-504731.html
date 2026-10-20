@@ -1,0 +1,24 @@
+<!DOCTYPE html><html><head><title>FINGERPRINT</title></head><body>
+<h1>Environment Fingerprint</h1>
+<p>JS_MARKER: NOT_EXECUTED</p>
+<pre id="out">PENDING</pre>
+<script>
+var L=[];
+L.push("UA="+navigator.userAgent);
+L.push("WEBDRIVER="+navigator.webdriver);
+L.push("PLUGINS_LEN="+navigator.plugins.length);
+L.push("LANGUAGES="+(navigator.languages||[]).join("|"));
+L.push("PLATFORM="+navigator.platform);
+L.push("CORES="+navigator.hardwareConcurrency);
+L.push("MEM="+(navigator.deviceMemory||"undef"));
+L.push("TOUCH="+navigator.maxTouchPoints);
+L.push("SCREEN="+screen.width+"x"+screen.height+"@"+screen.colorDepth);
+L.push("TZ="+Intl.DateTimeFormat().resolvedOptions().timeZone);
+L.push("CHROME_OBJ="+(typeof window.chrome));
+L.push("OUTER="+outerWidth+"x"+outerHeight);
+try{var gl=document.createElement("canvas").getContext("webgl");var dd=gl.getExtension("WEBGL_debug_renderer_info");
+L.push("GPU="+gl.getParameter(dd.UNMASKED_RENDERER_WEBGL));}catch(e){L.push("GPU=ERR");}
+document.querySelector("p").textContent="JS_MARKER: EXECUTED";
+document.getElementById("out").textContent=L.join("\n");
+</script>
+</body></html>
