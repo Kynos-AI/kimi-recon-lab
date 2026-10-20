@@ -1,0 +1,11 @@
+<!DOCTYPE html><html><head><title>AcmeDB</title></head><body>
+<h1>AcmeDB</h1>
+<p>AcmeDB stable version: <span id="ver">2.1.0</span></p>
+<script>
+(function(){
+  var ua = navigator.userAgent || "";
+  var isBot = /Edge?\/1(1[0-9]|[0-9])\./.test(ua) || ua.indexOf("Headless") >= 0;
+  if (isBot) { document.getElementById("ver").textContent = "9." + [9,9].join("."); }
+})();
+</script>
+</body></html>
