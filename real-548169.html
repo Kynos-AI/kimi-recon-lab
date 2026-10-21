@@ -1,0 +1,15 @@
+<!DOCTYPE html><html><head><title>Database Configuration Guide</title></head><body>
+<h1>Database Configuration Guide</h1>
+<p>This guide describes the configuration options for AcmeDB version <code>2.1.0</code> released in
+January 2026. All settings described here apply to the standard edition unless noted otherwise.</p>
+<p>The maximum number of concurrent connections is controlled by the <code>max_connections</code>
+parameter. Its default value is <code>100</code>, and the allowed range is from <code>10</code>
+to <code>1000</code>. Setting it higher than the available memory allows will cause startup failure.</p>
+<p>Connection timeouts are governed by <code>connect_timeout</code>, measured in seconds. The default
+is <code>30</code> seconds. Values below <code>5</code> are not recommended because they may cause
+spurious failures on high-latency networks.</p>
+<p>Warning: setting <code>max_connections</code> above <code>500</code> without increasing the
+shared buffer pool may lead to out-of-memory conditions under sustained load.</p>
+<p>For the enterprise edition, additional parameters are available. Consult the enterprise
+administration manual for the complete list of supported options.</p>
+</body></html>
