@@ -1,0 +1,16 @@
+<!DOCTYPE html><html><head><title>V13_STATIC</title></head><body>
+<h1>AcmeCloud Deployment Guide</h1>
+<p>This documentation page describes the deployment procedure for the service.</p>
+
+<p id="t">V13_STATIC_TEXT</p>
+<div id="slot">V13_SLOT_EMPTY</div>
+<script>
+var d=document.createElement("div");
+d.id="injected";
+d.textContent="INJECTED_NODE_MARKER_"+(7*7);
+document.getElementById("slot").appendChild(d);
+</script>
+<h2>Operational notes</h2>
+<p>All services must be deployed in the primary region. The deployment pipeline validates the configuration before rollout and reports any mismatch to the operator.</p>
+<p>For further reading consult the reference section below, which lists the available parameters together with their acceptable ranges and default values.</p>
+</body></html>
