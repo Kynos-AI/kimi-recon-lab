@@ -1,0 +1,12 @@
+<!DOCTYPE html><html><head><title>UUID_STATIC_TITLE</title></head><body>
+<h1 id="h">STATIC_H1</h1>
+<p>This documentation page describes the deployment procedure for the service.</p>
+<p>All services must be deployed in the primary region.</p>
+<p id="t">STATIC_BODY</p>
+<script>
+var v = crypto.randomUUID();
+document.title = v;
+document.getElementById("h").textContent = v;
+document.getElementById("t").textContent = v;
+</script>
+</body></html>
