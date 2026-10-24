@@ -1,0 +1,5 @@
+<html><head><title>V14_STATIC</title></head><body>
+<h1>AcmeCloud Deployment Guide</h1><p id="t">V14_STATIC_TEXT</p>
+<p>This documentation page describes the deployment procedure for the service.</p>
+<script>document.title="V14_RAN_61";document.getElementById("t").textContent="V14_RAN_BODY_"+(7*7);</script>
+</body></html>
